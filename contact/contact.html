@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contant</title>
+    <link rel="stylesheet" href="../contact/contact.css" />
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">Flyx</a>
+        <nav class="navbar">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../info/info.html">Info</a></li>
+            <li><a href="../gallery/gallery.html">Gallery</a></li>
+            <li>
+              <a href="#">Places</a>
+              <ul>
+                <li>
+                  <a href="#">Athens</a>
+                  <ul>
+                    <li><a href="../places/crete/crete.html">Crete</a></li>
+                    <li><a href="../places/naxos/naxos.html">Naxos</a></li>
+                    <li><a href="../places/mykonos/mykonos.html">Mykonos</a></li>
+                    <li><a href="../places/paros/paros.html">Paros</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="container">
+        <div class="row">
+                <h1>Contact Form</h1>
+        </div>
+        <div class="row">
+                <h4 style="text-align:center">Your help is necessary for us to improve!</h4>
+        </div>
+        <form onsubmit="sayThanks()">
+        <div class="row input-container">
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        <input type="text" required />
+                        <label>Name</label> 
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input">
+                        <input type="email" required />
+                        <label>Email</label> 
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input" style="float:right;">
+                        <input type="text" value="+30 " required />
+                        <label>Phone Number</label> 
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        <textarea required></textarea>
+                        <label>Message</label>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                        <button type="submit">Send Message</button>
+                </div>
+        </div>
+    </form>
+    </div>
+    
+    <script>
+        function sayThanks() {
+          var randomnumber_1 = Math.floor(Math.random() * 25);
+          var randomnumber_2 = Math.floor(Math.random() * 30);
+          var randomnumber_3 = Math.floor(Math.random() * 50);
+          var msg = "\n discount code: "+ randomnumber_1+"WEF"+ randomnumber_2+"DX" + randomnumber_3+"EE";
+          alert("The form was submitted,look your email for the discount code! " + msg);
+        }
+        </script>
+</body>
+</html>

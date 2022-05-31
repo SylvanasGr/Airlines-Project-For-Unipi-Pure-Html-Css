@@ -1,0 +1,74 @@
+.row {
+  position: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5em;
+  color: white;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+.li-4 ul li a {
+  color: white;
+}
+
+.li-4 ul li a:hover {
+  color: orange;
+}
+
+.contact-go {
+  color: orange;
+}
+
+.dropdown-button {
+    margin-top: 10px;
+  background-color: black;
+  color: orange;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-list a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: verdana;
+}
+.dropdown-list a:hover {
+  background-color: orange;
+}
+
+.dropdown:hover .dropdown-list {
+  display: block;
+}
+
+.dropdown:hover .dropdown-button {
+  background-color: #6666ff;
+}
+
+
+.info-body{
+    background-image: url('../slides/7.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+h1:hover,p:hover{
+  color: black;
+}
