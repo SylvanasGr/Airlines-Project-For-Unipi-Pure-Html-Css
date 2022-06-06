@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="ticket.css" />
+    <link rel="stylesheet" href="/gallery/gallery.css" />
+    <script src="ticket.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="/index.html" class="logo">Flyx</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="../index.html">Info</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <li>
+                    <a href="#">Places</a>
+                    <ul>
+                        <li>
+                            <a href="#">Athens</a>
+                            <ul>
+                                <li><a href="/places/crete/crete.html">Crete</a></li>
+                                <li><a href="/places/naxos/naxos.html">Naxos</a></li>
+                                <li><a href="/places/mykonos/mykonos.html">Mykonos</a></li>
+                                <li><a href="/places/paros/paros.html">Paros</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/ticket/ticket.html">Ticket</a></li>
+                <li><a href="/contact/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form id="myForm">
+        <div class="container" data-step>
+            <h3 class="step-title">Personal Info</h3>
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Konstantinos1" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Kolios" required>
+            </div>
+            <div class="form-group">
+                <label for="birthdate">Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number: (+30)</label>
+                <input type="text" id="phone" name="phone" placeholder="6981213123" minlength="9" maxlength="9"
+                    pattern="\d*" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="mppl21032@unipi.gr" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" placeholder="Athens">
+            </div>
+            <div class="form-group">
+                <label for="postal">Postal Code:</label>
+                <input type="text" id="postal" name="postal" placeholder="18863" minlength="5" maxlength="5"
+                    pattern="\d*">
+            </div>
+        </div>
+        <div class="container" data-step>
+            <h3 class="step-title">Flight Info</h3>
+            <div class="form-group">
+                <label for="df">Destination from: </label>
+                <select name="df" id="df" form="myForm" required>
+                    <option value="Crete">Crete</option>
+                    <option value="Paros">Paros</option>
+                    <option value="Naxos">Naxos</option>
+                    <option value="Mykonos">Mykonos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dt">Destination to: </label>
+                <select name="dt" id="dt" form="myForm" required>
+                    <option value="Crete">Crete</option>
+                    <option value="Paros">Paros</option>
+                    <option value="Naxos">Naxos</option>
+                    <option value="Mykonos">Mykonos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timeflight">Time:</label>
+                <select name="timeflight" id="timeflight" form="myForm" required>
+                    <option value="08:00">08:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="16:00">16:00</option>
+                </select>
+            </div>
+        </div>
+        <div class="container" data-step>
+            <h3 class="step-title">Payment Info</h3>
+            <div class="form-group">
+                <label for="cardtype">Card Type:</label>
+                <select name="cardtype" id="cardtype" form="myForm" required>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="Visa">Visa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="card">Card Number:</label>
+                <input type="text" id="card" name="card" maxlength="16" minlength="16" pattern="\d*" required>
+            </div>
+            <div class="form-group">
+                <label for="carxexpdate">Card Exp Date:</label>
+                <input type="date" id="carxexpdate" name="carxexpdate" required>
+            </div>
+            <div class="form-group">
+                <label for="cardlastdigits">Card Last 3 Digits:</label>
+                <input type="text" id="cardlastdigits" name="cardlastdigits" minlength="3" maxlength="3" pattern="\d*"
+                    required>
+
+            </div>
+            <div class="button-area">
+            <button type="button" class="button" style="background-color: lightcoral;"
+                onclick="onReset()">Reset</button>
+            <button type="button" class="button" style="background-color: lightblue;" onClick="onPrint()">Print</button>
+            <button type="submit" class="button" style="background-color: lightgreen;"" onclick="
+                onSubmit()">Submit</button>
+        </div>
+        </div>
+
+    </form>
+
+
+
+
+</body>
+
+</html>
