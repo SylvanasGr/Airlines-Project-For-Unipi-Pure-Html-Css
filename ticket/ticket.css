@@ -39,7 +39,10 @@
 .step-title {
   margin-bottom: 1rem;
   text-align: center;
-  color: #333;
+  color: white;
+  background-color: blueviolet ;
+  padding: 10px ;
+  border: 1px solid green ;
 }
 .button-area {
   text-align: center;
@@ -56,4 +59,35 @@
   font-size: 16px;
   color: white;
   font-weight: bolder;
+}
+
+.search-container{
+  width: 50%;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+form.search input[type=email] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 40%;
+  background: #f1f1f1;
+  text-align: center;
+  justify-content: center;
+}
+
+form.search button {
+  width: 5%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.search button:hover {
+  background: #0b7dda;
 }

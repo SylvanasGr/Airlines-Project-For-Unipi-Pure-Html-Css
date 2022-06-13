@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="ticket.css" />
     <link rel="stylesheet" href="/gallery/gallery.css" />
     <script src="ticket.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -39,7 +40,19 @@
             </ul>
         </nav>
     </header>
-    <form id="myForm">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="search-container">
+        <h3 class="step-title">Write your email if you arleady sumbit an order!</h3>
+    <form id="search" class="search" action="/" method="post" name="search">
+        <input type="email" placeholder="Search.." name="searchByEmail">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+    <form id="myForm" action="/" method="post" name="myForm">
         <div class="container" data-step>
             <h3 class="step-title">Personal Info</h3>
             <div class="form-group">
@@ -127,19 +140,16 @@
 
             </div>
             <div class="button-area">
-            <button type="button" class="button" style="background-color: lightcoral;"
-                onclick="onReset()">Reset</button>
-            <button type="button" class="button" style="background-color: lightblue;" onClick="onPrint()">Print</button>
-            <button type="submit" class="button" style="background-color: lightgreen;"" onclick="
-                onSubmit()">Submit</button>
-        </div>
+                <button type="button" class="button" style="background-color: lightcoral;"
+                    onclick="onReset()">Reset</button>
+                <button type="button" class="button" style="background-color: lightblue;"
+                    onClick="onPrint()">Print</button>
+                <button type="submit" class="button" style="background-color: lightgreen;"" onclick="
+                    onSubmit()">Submit</button>
+            </div>
         </div>
 
     </form>
-
-
-
-
 </body>
 
 </html>
