@@ -36,7 +36,12 @@ if($rs == true){
     echo "User :" .$firstname ." ".$lastname  ." saved succesfully.";
 }
 
-
+echo "
+<br>
+<br>
+<br>
+<br>
+<a style='text-decoration: none; font-size: 35px; color:salmon; ' href='../index.html'>Click here to go to the Home Page</a>";
 
 
 
