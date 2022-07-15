@@ -46,3 +46,7 @@
     font-weight: bold;
     color: green;
   }
+
+  html{
+    scroll-behavior: smooth;
+  }

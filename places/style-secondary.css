@@ -120,3 +120,6 @@ header .navbar ul li:hover > ul {
   color: black;
 }
 
+html{
+  scroll-behavior: smooth;
+}
