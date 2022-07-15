@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="/gallery/gallery.css" />
     <script src="ticket.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- for scroll bot to top -->
+    <script src="../generic-js-bot-to-top.js" defer></script>
+    <link rel="stylesheet" href="../generic-css-bot-to-top.css">
 </head>
 
 <body>
@@ -47,10 +50,10 @@
     <br>
     <div class="search-container">
         <h3 class="step-title">Write your email if you arleady sumbit an order!</h3>
-    <form id="search" class="search" action="/" method="post" name="search">
-        <input type="email" placeholder="Search.." name="searchByEmail">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
+        <form id="search" class="search" action="/" method="post" name="search">
+            <input type="email" placeholder="Search.." name="searchByEmail">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
     </div>
     <form id="myForm" action="/" method="post" name="myForm">
         <div class="container" data-step>
@@ -148,8 +151,10 @@
                     onSubmit()">Submit</button>
             </div>
         </div>
-
     </form>
+    <div className="scroll-to-top">
+        <span class="btn btn-position btn-style">^</i>
+    </div>
 </body>
 
 </html>

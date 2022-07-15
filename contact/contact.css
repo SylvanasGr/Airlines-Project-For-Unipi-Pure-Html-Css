@@ -118,6 +118,3 @@ input[type=checkbox]:checked + label {
   font-style: normal;
 }
 
-html{
-    scroll-behavior: smooth;
-  }

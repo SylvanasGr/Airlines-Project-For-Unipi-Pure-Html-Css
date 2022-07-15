@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unipi Airport AE</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html" class="logo">Flyx</a>
-      <nav class="navbar">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="./info/info.html">Info</a></li>
-          <li><a href="./gallery/gallery.html">Gallery</a></li>
-          <li>
-            <a href="#">Places</a>
-            <ul>
-              <li>
-                <a href="#">Athens</a>
-                <ul>
-                  <li><a href="./places/crete/crete.html">Crete</a></li>
-                  <li><a href="./places/naxos/naxos.html">Naxos</a></li>
-                  <li><a href="./places/mykonos/mykonos.html">Mykonos</a></li>
-                  <li><a href="./places/paros/paros.html">Paros</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="./ticket/ticket.html">Ticket</a></li>
-          <li><a href="./contact/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unipi Airport AE</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- for scroll bot to top -->
+  <script src="generic-js-bot-to-top.js" defer></script>
+  <link rel="stylesheet" href="generic-css-bot-to-top.css">
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">Flyx</a>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./info/info.html">Info</a></li>
+        <li><a href="./gallery/gallery.html">Gallery</a></li>
+        <li>
+          <a href="#">Places</a>
+          <ul>
+            <li>
+              <a href="#">Athens</a>
+              <ul>
+                <li><a href="./places/crete/crete.html">Crete</a></li>
+                <li><a href="./places/naxos/naxos.html">Naxos</a></li>
+                <li><a href="./places/mykonos/mykonos.html">Mykonos</a></li>
+                <li><a href="./places/paros/paros.html">Paros</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="./ticket/ticket.html">Ticket</a></li>
+        <li><a href="./contact/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div>
     <div>
-      <div>
-        <video autoplay loop muted play-inline class="welcome-video">
-          <source src="./videos/welcome.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <video autoplay loop muted play-inline class="welcome-video">
+        <source src="./videos/welcome.mp4" type="video/mp4" />
+      </video>
     </div>
-    <div class="welcome-text">
-      <h1 class="welcome-h1">Welcome to Flyx</h1>
-      <h2 class="welcome-h2">The best airplane platform for a smooth ride!</h2>
-      <h2 class="welcome-h2">
-        <a class="link-info" href="./info/info.html"
-          >Press here for more details!</a
-        >
-      </h2>
-    </div>
-  </body>
+  </div>
+  <div class="welcome-text">
+    <h1 class="welcome-h1">Welcome to Flyx</h1>
+    <h2 class="welcome-h2">The best airplane platform for a smooth ride!</h2>
+    <h2 class="welcome-h2">
+      <a class="link-info" href="./info/info.html">Press here for more details!</a>
+    </h2>
+  </div>
+  <div className="scroll-to-top">
+    <span class="btn btn-position btn-style">^</i>
+  </div>
+</body>
+
 </html>
