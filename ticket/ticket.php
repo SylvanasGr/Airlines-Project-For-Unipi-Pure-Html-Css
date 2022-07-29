@@ -33,7 +33,7 @@ $rs = pg_query($cn, $sql) or die("Cannot execute query, probably because you try
 pg_close($cn);
 
 if($rs == true){
-    echo "User :" .$firstname ." ".$lastname  ." saved succesfully.";
+    echo "User :" .$firstname ." " .$lastname  ." saved succesfully.";
 }
 
 echo "

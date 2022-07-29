@@ -1,18 +1,12 @@
 // // todo: change the path to the corresponding urls.
 
-var myFormAction = document.getElementById("myForm") || null;
-if (myFormAction) {
-  myFormAction.action =
-    "http://localhost/php_labs/Airlines-Project-For-Unipi-Pure-Html-Css/ticket/ticket.php";
-}
+// var myFormAction = document.getElementById("myForm") || null;
+// if (myFormAction) {
+//   myFormAction.action =
+//     "http://localhost/php_labs/Airlines-Project-For-Unipi-Pure-Html-Css/ticket/ticket.php";
+// }
 
-var searchAction = document.getElementById("search") || null;
-if (searchAction) {
-  searchAction.action =
-    "http://localhost/php_labs/Airlines-Project-For-Unipi-Pure-Html-Css/ticket/search.php";
-}
-
-pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+// pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 
 function showError(errorElement, errorMessage) {
   document.querySelector("." + errorElement).classList.add("display-error");
@@ -49,7 +43,6 @@ function onSubmit() {
 }
 
 function onReset() {
-  document.getElementById("myForm").reset();
   document.getElementById("myForm2").reset();
 }
 

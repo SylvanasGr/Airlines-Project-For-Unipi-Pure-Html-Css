@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="ticket.css" />
-    <link rel="stylesheet" href="/gallery/gallery.css" />
-    <script src="ticket.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- for scroll bot to top -->
-    <script src="../generic-js-bot-to-top.js" defer></script>
+    <title>Users</title>
     <link rel="stylesheet" href="../generic-css-bot-to-top.css">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../ticket/ticket.css" />
+    <link rel="stylesheet" href="/gallery/gallery.css" />
+    <script src="user.js" defer></script>
+        <!-- for scroll bot to top -->
+        <script src="../generic-js-bot-to-top.js" defer></script>
+        <link rel="stylesheet" href="../generic-css-bot-to-top.css">
 </head>
 
 <body>
@@ -49,14 +49,19 @@
     <br>
     <br>
     <br>
-    <div class="search-container">
-        <h3 class="step-title">Write your email if you arleady sumbit an order!</h3>
-        <form id="search" class="search" action="/" method="post" name="search">
-            <input type="email" placeholder="Search.." name="searchByEmail">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <form id="myForm" action="/" method="post" name="myForm">
+    <form id="myForm2" action="/" method="post" name="myForm2">
+        <div class="container" data-step>
+            <h3 class="step-title">User Credentials</h3>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="mppl21032@unipi.gr" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Email:</label>
+                <input type="password" id="password" name="password" placeholder="Hello-World100" required>
+                <p class="error firstname-error"></p>
+            </div>
+        </div>
         <div class="container" data-step>
             <h3 class="step-title">Personal Info</h3>
             <div class="form-group">
@@ -79,13 +84,21 @@
                     pattern="\d*" required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="mppl21032@unipi.gr" required>
+                <label for="country">Country:</label>
+                <select name="country" id="country" form="myForm2" required>
+                    <option value="Greece">Greece</option>
+                    <option value="Usa">Usa</option>
+                    <option value="Uk">Uk</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Qatar">Qatar</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="state">State:</label>
-                <input type="text" id="state" name="state" placeholder="Athens">
-                <p class="error state-error"></p>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Lakonias 150" minlength="1" maxlength="50"
+                    pattern="\d*">
+                <p class="error address-error"></p>
             </div>
             <div class="form-group">
                 <label for="postal">Postal Code:</label>
@@ -94,40 +107,10 @@
             </div>
         </div>
         <div class="container" data-step>
-            <h3 class="step-title">Flight Info</h3>
-            <div class="form-group">
-                <label for="df">Destination from: </label>
-                <select name="df" id="df" form="myForm" required>
-                    <option value="Crete">Crete</option>
-                    <option value="Paros">Paros</option>
-                    <option value="Naxos">Naxos</option>
-                    <option value="Mykonos">Mykonos</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="dt">Destination to: </label>
-                <select name="dt" id="dt" form="myForm" required>
-                    <option value="Crete">Crete</option>
-                    <option value="Paros">Paros</option>
-                    <option value="Naxos">Naxos</option>
-                    <option value="Mykonos">Mykonos</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="timeflight">Time:</label>
-                <select name="timeflight" id="timeflight" form="myForm" required>
-                    <option value="08:00">08:00</option>
-                    <option value="12:30">12:30</option>
-                    <option value="14:00">14:00</option>
-                    <option value="16:00">16:00</option>
-                </select>
-            </div>
-        </div>
-        <div class="container" data-step>
             <h3 class="step-title">Payment Info</h3>
             <div class="form-group">
                 <label for="cardtype">Card Type:</label>
-                <select name="cardtype" id="cardtype" form="myForm" required>
+                <select name="cardtype" id="cardtype" form="myForm2" required>
                     <option value="MasterCard">MasterCard</option>
                     <option value="Visa">Visa</option>
                 </select>
@@ -155,10 +138,10 @@
                     onSubmit()">Submit</button>
             </div>
         </div>
+        <div className="scroll-to-top">
+            <span class="btn btn-position btn-style">^</i>
+        </div>
     </form>
-    <div className="scroll-to-top">
-        <span class="btn btn-position btn-style">^</i>
-    </div>
 </body>
 
 </html>
