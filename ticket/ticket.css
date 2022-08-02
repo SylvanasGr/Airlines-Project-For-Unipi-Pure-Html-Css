@@ -40,9 +40,9 @@
   margin-bottom: 1rem;
   text-align: center;
   color: white;
-  background-color: blueviolet ;
-  padding: 10px ;
-  border: 1px solid green ;
+  background-color: blueviolet;
+  padding: 10px;
+  border: 1px solid green;
 }
 .button-area {
   text-align: center;
@@ -61,13 +61,13 @@
   font-weight: bolder;
 }
 
-.search-container{
+.search-container {
   width: 50%;
   margin: 0 auto;
   max-width: 600px;
 }
 
-form.search input[type=email] {
+form.search input[type="email"] {
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -80,7 +80,7 @@ form.search input[type=email] {
 form.search button {
   width: 5%;
   padding: 10px;
-  background: #2196F3;
+  background: #2196f3;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
@@ -92,14 +92,21 @@ form.search button:hover {
   background: #0b7dda;
 }
 
-.error{
-  color:#af4242;
-  background-color: #fde8ec;
-  padding: 10px;
-  display: none;
+.form-group input {
+  outline: 0;
 }
-.error.display-error{
-  display: block;
-  margin-bottom: 20px;
-  /* transform: translateY(-20px); */
+
+.form-group.success input {
+  border-color: #09c372;
 }
+
+.form-group.error input {
+  border-color: #ff3860;
+}
+
+.form-group .error{
+  color:#ff3860;
+  font-size: 9px;
+  height: 13px;
+}
+

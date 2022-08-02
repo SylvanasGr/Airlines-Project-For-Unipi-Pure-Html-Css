@@ -61,43 +61,51 @@
             <h3 class="step-title">Personal Info</h3>
             <div class="form-group">
                 <label for="firstname">First Name:</label>
-                <input type="text" id="firstname" name="firstname" placeholder="Konstantinos1" required>
-                <p class="error firstname-error"></p>
+                <input type="text" id="firstname" name="firstname" placeholder="Konstantinos">
+                <div class="error"></div>
             </div>
             <div class="form-group">
                 <label for="lastname">Last Name:</label>
-                <input type="text" id="lastname" name="lastname" placeholder="Kolios" required>
-                <p class="error lastname-error"></p>
+                <input type="text" id="lastname" name="lastname" placeholder="Kolios">
+                <div class="error"></div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="birthdate">Birthdate:</label>
                 <input type="date" id="birthdate" name="birthdate" required>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="phone">Phone Number: (+30)</label>
-                <input type="text" id="phone" name="phone" placeholder="6981213123" minlength="9" maxlength="9"
-                    pattern="\d*" required>
+                <input type="text" id="phone" name="phone" placeholder="6981213123" minlength="10" maxlength="10"
+                    pattern="\d*"  required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="mppl21032@unipi.gr" required>
+                <input type="text" id="email" name="email" placeholder="mppl21032@unipi.gr">
+                <div class="error"></div>
             </div>
             <div class="form-group">
                 <label for="state">State:</label>
-                <input type="text" id="state" name="state" placeholder="Athens">
-                <p class="error state-error"></p>
+                <select name="state" id="state" form="myForm" required>
+                    <option value="Athens">Athens</option>
+                    <option value="France">France</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Usa">Usa</option>
+                    <option value="Uk">Uk</option>
+                    <option value="Somalia">Somalia</option>
+                    <option value="Germany">Germany</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="postal">Postal Code:</label>
                 <input type="text" id="postal" name="postal" placeholder="18863" minlength="5" maxlength="5"
-                    pattern="\d*">
+>                <div class="error"></div>
             </div>
         </div>
         <div class="container" data-step>
             <h3 class="step-title">Flight Info</h3>
             <div class="form-group">
-                <label for="df">Destination from: </label>
-                <select name="df" id="df" form="myForm" required>
+                <label for="dfrom">Destination from: </label>
+                <select name="dfrom" id="dfrom" form="myForm" required>
                     <option value="Crete">Crete</option>
                     <option value="Paros">Paros</option>
                     <option value="Naxos">Naxos</option>
@@ -105,8 +113,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="dt">Destination to: </label>
-                <select name="dt" id="dt" form="myForm" required>
+                <label for="dto">Destination to: </label>
+                <select name="dto" id="dto" form="myForm" required>
                     <option value="Crete">Crete</option>
                     <option value="Paros">Paros</option>
                     <option value="Naxos">Naxos</option>
@@ -124,7 +132,7 @@
             </div>
         </div>
         <div class="container" data-step>
-            <h3 class="step-title">Payment Info</h3>
+            <!-- <h3 class="step-title">Payment Info</h3>
             <div class="form-group">
                 <label for="cardtype">Card Type:</label>
                 <select name="cardtype" id="cardtype" form="myForm" required>
@@ -145,14 +153,13 @@
                 <input type="text" id="cardlastdigits" name="cardlastdigits" minlength="3" maxlength="3" pattern="\d*"
                     required>
 
-            </div>
+            </div> -->
             <div class="button-area">
                 <button type="button" class="button" style="background-color: lightcoral;"
                     onclick="onReset()">Reset</button>
                 <button type="button" class="button" style="background-color: lightblue;"
                     onClick="onPrint()">Print</button>
-                <button type="submit" class="button" style="background-color: lightgreen;"" onclick="
-                    onSubmit()">Submit</button>
+                <button type="submit" class="button" style="background-color: lightgreen;">Submit</button>
             </div>
         </div>
     </form>
