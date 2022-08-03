@@ -75,8 +75,8 @@
             </div> -->
             <div class="form-group">
                 <label for="phone">Phone Number: (+30)</label>
-                <input type="text" id="phone" name="phone" placeholder="6981213123" minlength="10" maxlength="10"
-                    pattern="\d*"  required>
+                <input type="text" id="phone" name="phone" placeholder="6981213123" minlength="10" maxlength="10">
+                <div class="error"></div>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -85,7 +85,7 @@
             </div>
             <div class="form-group">
                 <label for="state">State:</label>
-                <select name="state" id="state" form="myForm" required>
+                <select name="state" id="state" form="myForm">
                     <option value="Athens">Athens</option>
                     <option value="France">France</option>
                     <option value="Turkey">Turkey</option>
@@ -97,33 +97,35 @@
             </div>
             <div class="form-group">
                 <label for="postal">Postal Code:</label>
-                <input type="text" id="postal" name="postal" placeholder="18863" minlength="5" maxlength="5"
->                <div class="error"></div>
+                <input type="text" id="postal" name="postal" placeholder="18863" minlength="5" maxlength="5">
+                <div class="error"></div>
             </div>
         </div>
         <div class="container" data-step>
             <h3 class="step-title">Flight Info</h3>
             <div class="form-group">
                 <label for="dfrom">Destination from: </label>
-                <select name="dfrom" id="dfrom" form="myForm" required>
+                <select name="dfrom" id="dfrom" form="myForm" >
                     <option value="Crete">Crete</option>
                     <option value="Paros">Paros</option>
                     <option value="Naxos">Naxos</option>
                     <option value="Mykonos">Mykonos</option>
                 </select>
+                <div class="error"></div>
             </div>
             <div class="form-group">
                 <label for="dto">Destination to: </label>
-                <select name="dto" id="dto" form="myForm" required>
+                <select name="dto" id="dto" form="myForm" >
                     <option value="Crete">Crete</option>
                     <option value="Paros">Paros</option>
                     <option value="Naxos">Naxos</option>
                     <option value="Mykonos">Mykonos</option>
                 </select>
+                <div class="error"></div>
             </div>
             <div class="form-group">
                 <label for="timeflight">Time:</label>
-                <select name="timeflight" id="timeflight" form="myForm" required>
+                <select name="timeflight" id="timeflight" form="myForm">
                     <option value="08:00">08:00</option>
                     <option value="12:30">12:30</option>
                     <option value="14:00">14:00</option>
@@ -132,28 +134,29 @@
             </div>
         </div>
         <div class="container" data-step>
-            <!-- <h3 class="step-title">Payment Info</h3>
+            <h3 class="step-title">Payment Info</h3>
             <div class="form-group">
                 <label for="cardtype">Card Type:</label>
-                <select name="cardtype" id="cardtype" form="myForm" required>
+                <select name="cardtype" id="cardtype" form="myForm">
                     <option value="MasterCard">MasterCard</option>
                     <option value="Visa">Visa</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="card">Card Number:</label>
-                <input type="text" id="card" name="card" maxlength="16" minlength="16" pattern="\d*" required>
+                <input type="text" id="card" name="card" maxlength="16" minlength="16">
+                <div class="error"></div>
             </div>
             <div class="form-group">
-                <label for="carxexpdate">Card Exp Date:</label>
-                <input type="date" id="carxexpdate" name="carxexpdate" required>
+                <label for="cardxexpdate">Card Exp Date:</label>
+                <input type="date" id="cardxexpdate" name="cardxexpdate">
+                <div class="error"></div>
             </div>
             <div class="form-group">
-                <label for="cardlastdigits">Card Last 3 Digits:</label>
-                <input type="text" id="cardlastdigits" name="cardlastdigits" minlength="3" maxlength="3" pattern="\d*"
-                    required>
-
-            </div> -->
+                <label for="cld">Card Last 3 Digits:</label>
+                <input type="text" id="cld" name="cld" minlength="3" maxlength="3">
+                                <div class="error"></div>
+            </div>
             <div class="button-area">
                 <button type="button" class="button" style="background-color: lightcoral;"
                     onclick="onReset()">Reset</button>
