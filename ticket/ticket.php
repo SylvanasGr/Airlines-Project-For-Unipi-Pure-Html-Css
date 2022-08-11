@@ -19,16 +19,16 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 $state = $_POST['state'];
 $postal = $_POST['postal'];
-$df = $_POST['df'];
-$dt = $_POST['dt'];
+$dfrom = $_POST['dfrom'];
+$dto = $_POST['dto'];
 $timeflight = $_POST['timeflight'];
 $cardtype = $_POST['cardtype'];
 $card = $_POST['card'];
-$carxexpdate = $_POST['carxexpdate'];
-$cardlastdigits = $_POST['cardlastdigits'];
+$cardxexpdate = $_POST['cardxexpdate'];
+$cld = $_POST['cld'];
 
 $sql = "insert into users_data(firstname,lastname,birthdate,phone,email,state,postal,df,dt,timeflight,cardtype,card,carxexpdate,cardlastdigits)
-values ('$firstname','$lastname','$birthdate','$phone','$email','$state','$postal','$df','$dt','$timeflight','$cardtype','$card','$carxexpdate','$cardlastdigits');";
+values ('$firstname','$lastname','$birthdate','$phone','$email','$state','$postal','$dfrom','$dto','$timeflight','$cardtype','$card','$cardxexpdate','$cld');";
 $rs = pg_query($cn, $sql) or die("Cannot execute query, probably because you try to save the same user twice. : $sql\n");
 pg_close($cn);
 

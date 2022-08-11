@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
-    <link rel="stylesheet" href="../generic-css-bot-to-top.css">
+    <title>Document</title>
+    <script src="user.js" defer></script>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../ticket/ticket.css" />
     <link rel="stylesheet" href="/gallery/gallery.css" />
-    <link rel="stylesheet" href="user.css">
-    <script src="user.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- for scroll bot to top -->
     <script src="../generic-js-bot-to-top.js" defer></script>
-    <link rel="stylesheet" href="../generic-css-bot-to-top.css">
+    <link rel="stylesheet" href="user.css">
 </head>
 
 <body>
@@ -50,70 +49,64 @@
     <br>
     <br>
     <br>
-        <div class="container" data-step>
-            <h3 class="step-title">Login or Create User Choose An Option :</h3>
-            <div class="form-group">
-                <button id="login" class="button menu" style="background-color: lightcoral;" onclick="showLogin()" >Login</button>
-            </div>
-            <div class="form-group">
-                <button id="create" class="button menu" style="background-color: lightseagreen;" onclick="showCreate()" >New User</button>
-            </div>
-
+    <div class="container" data-step>
+        <h3 class="step-title">Login or Create User Choose An Option :</h3>
+        <div class="form-group">
+            <button class="button menu" style="background-color: lightcoral;" onclick="showLogin()">Login</button>
         </div>
-    <form id="loginForm" action="/" method="post" name="loginForm">
+        <div class="form-group">
+            <button class="button menu" style="background-color: lightseagreen;" onclick="showCreate()">New
+                User</button>
+        </div>
+
+    </div>
+
+    <form id="login" action="/" method="post" name="login">
         <div class="container" data-step>
-            <h3 class="step-title">Login User</h3>
+            <h3 class="step-title">Login</h3>
             <div class="form-group">
-                <label for="lemail">Email:</label>
-                <input type="email" id="lemail" name="lemail" placeholder="mppl21032@unipi.gr">
+                <label for="login-email">Email:</label>
+                <input type="text" id="login-email" name="login-email" placeholder="mppl21032@unipi.gr">
                 <div class="error"></div>
             </div>
             <div class="form-group">
-                <label for="lpassword">Password:</label>
-                <input type="text" id="lpassword" name="lpassword" placeholder="Pass123">
+                <label for="login-password">Password:</label>
+                <input type="text" id="login-password" name="login-password" placeholder="Pass123" minlength="8">
                 <div class="error"></div>
             </div>
-        </div>
-
-        <div class="container" data-step>
 
             <div class="button-area">
                 <button type="button" class="button" style="background-color: lightcoral;"
-                    onclick="onReset()">Reset</button>
+                    onclick="onResetLogin()">Reset</button>
                 <button type="button" class="button" style="background-color: lightblue;"
                     onClick="onPrint()">Print</button>
-                <button type="submit" class="button" style="background-color: lightgreen;" onclick="
-                    onSubmit()">Submit</button>
+                <button type="submit" class="button" style="background-color: lightgreen;">Submit</button>
             </div>
-        </div>
-        <div className="scroll-to-top">
-            <span class="btn btn-position btn-style">^</i>
-        </div>
     </form>
-    <form id="createForm" action="/" method="post" name="createForm" hidden>
+    </div>
+
+    <form id="create" action="/" method="post" name="create">
         <div class="container" data-step>
             <h3 class="step-title">Create User</h3>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="mppl21032@unipi.gr">
+                <label for="create-email">Email:</label>
+                <input type="text" id="create-email" name="create-email" placeholder="mppl21032@unipi.gr">
                 <div class="error"></div>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="text" id="password" name="password" placeholder="Pass123">
+                <input type="text" id="create-password" name="create-password" placeholder="Pass123"  minlength="8">
                 <div class="error"></div>
             </div>
             <div class="form-group">
-                <label for="repeatpassword">Repeat Password:</label>
-                <input type="password" id="repeatpassword" name="repeatpassword" placeholder="Pass123">
+                <label for="rpassword">Repeat Password:</label>
+                <input type="text" id="create-repeat-password" name="create-repeat-password" placeholder="Pass123"  minlength="8">
                 <div class="error"></div>
             </div>
-        </div>
-        <!-- <div class="container" data-step>
-            <h3 class="step-title">Personal Info</h3>
+
             <div class="form-group">
                 <label for="firstname">First Name:</label>
-                <input type="text" id="firstname" name="firstname" placeholder="Konstantinos1">
+                <input type="text" id="firstname" name="firstname" placeholder="Konstantinos">
                 <div class="error"></div>
             </div>
             <div class="form-group">
@@ -121,79 +114,66 @@
                 <input type="text" id="lastname" name="lastname" placeholder="Kolios">
                 <div class="error"></div>
             </div>
+
             <div class="form-group">
-                <label for="birthdate">Birthdate:</label>
-                <input type="date" id="birthdate" name="birthdate">
-                                <div class="error"></div>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Lakonias">
+                <div class="error"></div>
             </div>
+
             <div class="form-group">
-                <label for="phone">Phone Number: (+30)</label>
-                <input type="text" id="phone" name="phone" placeholder="6981213123" minlength="9" maxlength="9"
-                    >
-                                    <div class="error"></div>
+                <label for="addressNo">AddressNo:</label>
+                <input type="text" id="addressNo" name="addressNo" placeholder="50" minlength="1">
+                <div class="error"></div>
             </div>
+
+
             <div class="form-group">
-                <label for="country">Country:</label>
-                <select name="country" id="country" form="myForm2">
-                    <option value="Greece">Greece</option>
+                <label for="state">State:</label>
+                <select name="state" id="state" form="create">
+                    <option value="Athens">Athens</option>
+                    <option value="France">France</option>
+                    <option value="Turkey">Turkey</option>
                     <option value="Usa">Usa</option>
                     <option value="Uk">Uk</option>
-                    <option value="Spain">Spain</option>
-                    <option value="Cyprus">Cyprus</option>
-                    <option value="Qatar">Qatar</option>
+                    <option value="Somalia">Somalia</option>
+                    <option value="Germany">Germany</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" placeholder="Lakonias 150" minlength="1" maxlength="50"
-                    >
-                    <div class="error"></div>
-                <p class="error address-error"></p>
-            </div>
-            <div class="form-group">
                 <label for="postal">Postal Code:</label>
-                <input type="text" id="postal" name="postal" placeholder="18863" minlength="5" maxlength="5"
-                    >
-                    <div class="error"></div>
+                <input type="text" id="postal" name="postal" placeholder="18863" minlength="5" maxlength="5">
+                <div class="error"></div>
             </div>
-        </div> -->
-        <div class="container" data-step>
-            <!-- <h3 class="step-title">Payment Info</h3>
+
+            <div class="form-group">
+                <label id="phoneee">Phone Number: </label>
+                <input type="text" id="phone" name="phone" placeholder="6981213123" minlength="10" maxlength="10">
+                <div class="error"></div>
+            </div>
+
             <div class="form-group">
                 <label for="cardtype">Card Type:</label>
-                <select name="cardtype" id="cardtype" form="myForm2">
+                <select name="cardtype" id="cardtype" form="create">
                     <option value="MasterCard">MasterCard</option>
                     <option value="Visa">Visa</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="card">Card Number:</label>
-                <input type="text" id="card" name="card" maxlength="16" minlength="16" >
+                <input type="text" id="card" name="card" maxlength="16" minlength="16">
                 <div class="error"></div>
             </div>
-            <div class="form-group">
-                <label for="cardxexpdate">Card Exp Date:</label>
-                <input type="date" id="cardxexpdate" name="cardxexpdate">
-                <div class="error"></div>
-            </div>
-            <div class="form-group">
-                <label for="cardlastdigits">Card Last 3 Digits:</label>
-                <input type="text" id="cardlastdigits" name="cardlastdigits" minlength="3" maxlength="3" >
-                <div class="error"></div>
-            </div> -->
+
             <div class="button-area">
                 <button type="button" class="button" style="background-color: lightcoral;"
-                    onclick="onReset()">Reset</button>
+                    onclick="onResetCreate()">Reset</button>
                 <button type="button" class="button" style="background-color: lightblue;"
                     onClick="onPrint()">Print</button>
-                <button type="submit" class="button" style="background-color: lightgreen;" onclick="
-                    onSubmit()">Submit</button>
+                <button type="submit" class="button" style="background-color: lightgreen;">Submit</button>
             </div>
-        </div>
-        <div className="scroll-to-top">
-            <span class="btn btn-position btn-style">^</i>
-        </div>
     </form>
+    </div>
 </body>
 
 </html>

@@ -1,62 +1,81 @@
-document.getElementById("loginForm").style.display='none';
-document.getElementById("createForm").style.display='none'
 
-function showLogin(){
-  document.getElementById("loginForm").style.display='block';
-  document.getElementById("createForm").style.display='none'
+document.getElementById("login").style.display='none';
+document.getElementById("create").style.display='none';
+
+ function showLogin(){
+  document.getElementById("login").style.display='block';
+  document.getElementById("create").style.display='none';
+
 }
 
 function showCreate(){
-  document.getElementById("loginForm").style.display='none';
-  document.getElementById("createForm").style.display='block'
+  document.getElementById("login").style.display='none';
+  document.getElementById("create").style.display='block';
 }
 
+const loginForm = document.getElementById("login");
+const createForm = document.getElementById("create");
+const le = document.getElementById("login-email");
+const lp = document.getElementById("login-password");
+const ce = document.getElementById("create-email");
+const cp = document.getElementById("create-password");
+const crp = document.getElementById("create-repeat-password");
+const firstname = document.getElementById("firstname");
+const lastname = document.getElementById("lastname");
+const address = document.getElementById("address");
+const addressNo = document.getElementById("addressNo");
+const postal = document.getElementById("postal");
+const phone = document.getElementById("phone");
+const card = document.getElementById("card");
+const latinValidation = !/^[a-zA-Z]+$/;
 
-// // // todo: change the path to the corresponding urls.
-
-// var searchAction = document.getElementById("search") || null;
-// if (searchAction) {
-//   searchAction.action =
-//     "http://localhost/php_labs/Airlines-Project-For-Unipi-Pure-Html-Css/ticket/search.php";
-// }
-
-// const latinValidation = !/^[a-zA-Z]+$/;
-const formLogin = document.getElementById("loginForm");
-const lemail = document.getElementById("lemail");
-const lpassword = document.getElementById("lpassword");
-// const form = document.getElementById("createForm");
-const errorElement = document.getElementById("error");
-// const firstname = document.getElementById("firstname");
-// const lastname = document.getElementById("lastname");
-// const birthdate = document.getElementById("birthdate");
-// const state = document.getElementById("state");
-// const phone = document.getElementById("phone");
-// const email = document.getElementById("email");
-// const password = document.getElementById("password");
-// const repeatpassword = document.getElementById("repeatpassword");
-// const postal = document.getElementById("postal");
-// const dfrom = document.getElementById("dfrom");
-// const dto = document.getElementById("dto");
-// const card = document.getElementById("card");
-// const cld = document.getElementById("cld");
-// const cardxexpdate = document.getElementById("cardxexpdate");
-let sending = [];
-formLogin.addEventListener("submit", (e) => {
-  validateInputsLogin(e);
-})
-
-form.addEventListener("submit", (e) => {
-  validateInputsCreate(e);
+loginForm.addEventListener("submit", (e) => {
+    validateLogin(e);
 });
 
-function onReset() {
-  document.getElementById("createForm").reset();
-  errorElement.innerText = null;
-}
+createForm.addEventListener("submit", (e) => {
+  validateCreate(e);
+});
 
-function onPrint() {
-  window.print();
-}
+let sending = [];
+const validateLogin = (e) => {
+  const emailValue = le.value.trim();
+  const passwordValue = lp.value.trim();
+
+  if (
+    emailValue == "" ||
+    !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      emailValue
+    )
+  ) {
+    setError(
+      le,
+      "Email must contains something like this :  example@whatever.com"
+    );
+  } else {
+    setSuccess(le);
+  }
+
+  if (
+    passwordValue == "" ||
+    !/(?=.*\d)/.test(passwordValue) ||
+    !/(?=.*[a-z])/.test(passwordValue) ||
+    !/(?=.*[A-Z])/.test(passwordValue)
+  ) {
+    setError(lp, "Wrong password or email is not found.");
+  } else {
+    setSuccess(lp);
+  }
+
+  if (sending.length === 0) {
+    if (loginForm) {
+      loginForm.action = "http://localhost/php_labs/Airlines-Project-For-Unipi-Pure-Html-Css/user/user-login.php"
+    }
+  } else {
+    e.preventDefault();
+    sending = [];
+  }
+};
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
@@ -77,123 +96,114 @@ const setSuccess = (element) => {
   inputControl.classList.remove("error");
 };
 
-// const latinMsg =
-//   "This field must contains only latin characters and it's required.";
+const latinMsg =
+  "This field must contains only latin characters and it's required.";
 
-const validateInputsCreate = (e) => {
-  // const firstnameValue = firstname.value.trim();
-  // const lastnameValue = lastname.value.trim();
-  const emailValue = email.value.trim();
-  const passwordValue = password.value.trim();
-  const repeatpasswordValue = repeatpassword.value.trim();
-  // const postalValue = postal.value.trim();
-  // const phoneValue = phone.value.trim();
-  // const cldValue = cld.value.trim();
-  // const cardValue = card.value.trim();
-  // const cardxexpdateValue = cardxexpdate.value.trim()
-
-  // if ( firstnameValue == "" || !/^[a-zA-Z]+$/.test(firstnameValue) ) {
-  //   setError(firstname, latinMsg);
-  // } else {
-  //   setSuccess(firstname);
-  // }
-
-  // if (firstnameValue == "" || !/^[a-zA-Z]+$/.test(lastnameValue) || lastnameValue == "") {
-  //   setError(lastname, latinMsg);
-  // } else {
-  //   setSuccess(lastname);
-  // }
-
-  // if (
-  //   emailValue == "" ||
-  //   !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-  //     emailValue
-  //   )
-  // ) {
-  //   setError(
-  //     email,
-  //     "Email must contains something like this :  example@whatever.com"
-  //   );
-  // } else {
-  //   setSuccess(email);
-  // }
-
-  // if (passwordValue == "" || !/^\d+$/.test(passwordValue)) {
-  //   setError(
-  //     password,
-  //     "Password must be not be null and must contains one lowercase,one uppercase and one digit."
-  //   );
-  // } else {
-  //   setSuccess(password);
-  // }
-
-  // if (repeatpasswordValue == "" || !/^\d+$/.test(repeatpasswordValue)) {
-  //   setError(
-  //     repeatpassword,
-  //     "Password must be not be null and must contains one lowercase,one uppercase and one digit."
-  //   );
-  // } else {
-  //   setSuccess(repeatpassword);
-  // }
+const validateCreate = (e) => {
+  const emailValue = ce.value.trim();
+  const passwordValue = cp.value.trim();
+  const repeatPasswordValue = crp.value.trim();
+  const firstnameValue = firstname.value.trim();
+  const lastnameValue = lastname.value.trim();
+  const addressValue = address.value.trim();
+  const addressNoValue = addressNo.value.trim();
+  const postalValue = postal.value.trim();
+  let phoneValue = phone.value.trim();
+  const cardValue = card.value.trim();
+  const stateValue = document.getElementById("state").value;
 
 
-  // if(passwordValue !== repeatpasswordValue){
-  //   setError(repeatpassword,"Not same passwords");
-  // }else{
-  //   setSuccess(repeatpassword);
-  // }
+  if ( firstnameValue == "" || !/^[a-zA-Z]+$/.test(firstnameValue) ) {
+    setError(firstname, latinMsg);
+  } else {
+    setSuccess(firstname);
+  }
 
-  // if (passwordValue === repeatpasswordValue && passwordValue !== "") {
-  //   alert("true");
-  // } else {
-  //   alert("false");
-  // }
+  if (lastnameValue == "" || !/^[a-zA-Z]+$/.test(lastnameValue) ) {
+    setError(lastname, latinMsg);
+  } else {
+    setSuccess(lastname);
+  }
 
-  // if (phoneValue == "" || !/^\d+$/.test(phoneValue)) {
-  //   setError(phone, "Postal field must contains 10 digits without letters.");
-  // } else {
-  //   setSuccess(phone);
-  // }
+  
+  if (addressValue == "" || !/^[a-zA-Z]+$/.test(addressValue) ) {
+    setError(address, latinMsg);
+  } else {
+    setSuccess(address);
+  }
 
-  // if (postalValue == "" || !/^\d+$/.test(postalValue)) {
-  //   setError(postal, "Postal field must contains 5 digits without letters.");
-  // } else {
-  //   setSuccess(postal);
-  // }
+  if (addressNoValue == "" ||  !/^\d+$/.test(addressNoValue)) {
+    setError(addressNo, "At least one number");
+  } else {
+    setSuccess(addressNo);
+  }
 
-  // if (cldValue == "" || !/^\d+$/.test(cldValue)) {
-  //   setError(cld, "Card Last 3 Digits  field must contains 3 digits without letters.");
-  // }else{
-  //   setSuccess(cld);
-  // }
+  if (
+    emailValue == "" ||
+    !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      emailValue
+    )
+  ) {
+    setError(
+      ce,
+      "Email must contains something like this :  example@whatever.com"
+    );
+  } else {
+    setSuccess(ce);
+  }
 
-  // if (dfrom.value == dto.value) {
-  //       setError(
-  //     dto,
-  //     "Cant fly for the same destination:" +
-  //       "example : Crete - Crete is not acceptable." +
-  //       "example : Crete - Naxos is accepatable");
-  // } else {
-  //   setSuccess(dto);
-  // }
+  if (
+    passwordValue == "" ||
+    !/(?=.*\d)/.test(passwordValue) ||
+    !/(?=.*[a-z])/.test(passwordValue) ||
+    !/(?=.*[A-Z])/.test(passwordValue)
+  ) {
+    setError(cp, "Wrong password format or wrong password of the email : " + emailValue);
+  } else {
+    setSuccess(cp);
+  }
 
-  // if (cardValue == "" || !/^\d+$/.test(cardValue)) {
-  //   setError(card, "Card field must contains 16 digits without letters.");
-  // } else {
-  //   setSuccess(card);
-  // }
+  if (
+    passwordValue !== repeatPasswordValue
+  ) {
+    setError(crp, "Repeat password doesn't match.");
+  } else {
+    setSuccess(crp);
+  }
 
-  // if(cardxexpdateValue ==""){
-  //   setError(cardxexpdate,"Please put a valid date");
-  // }else{
-  //   setSuccess(cardxexpdate);
-  // }
-  alert(sending.length);
+  if (phoneValue == "" || !/^\d+$/.test(phoneValue)) {
+    setError(phone, "Postal field must contains 10 digits without letters.");
+  } else {
+    setSuccess(phone);
+  }
+
+  if (postalValue == "" || !/^\d+$/.test(postalValue)) {
+    setError(postal, "Postal field must contains 5 digits without letters.");
+  } else {
+    setSuccess(postal);
+  }
+
+  if (cardValue == "" || !/^\d+$/.test(cardValue)) {
+    setError(card, "Card field must contains 16 digits without letters.");
+  } else {
+    setSuccess(card);
+  }
+
+
+  if(stateValue == 'Athens'){
+    document.getElementById("phoneee").innerHTML = "Phone Number: (+30)";
+    if(phoneValue){
+      var temp = phoneValue;
+      phoneValue = "30".concat(temp);
+    }
+  }else{
+    document.getElementById("phoneee").innerHTML = "Phone Number: ";
+  }
+
+
   if (sending.length === 0) {
-    var myFormAction = document.getElementById("createForm") || null;
-    if (myFormAction) {
-      myFormAction.action =
-        "http://localhost/php_labs/Airlines-Project-For-Unipi-Pure-Html-Css/ticket/ticket.php";
+    if (createForm) {
+      createForm.action = "http://localhost/php_labs/Airlines-Project-For-Unipi-Pure-Html-Css/user/user-create.php";
     }
   } else {
     e.preventDefault();
@@ -201,43 +211,16 @@ const validateInputsCreate = (e) => {
   }
 };
 
-const validateInputsLogin = (e) => {
-
-  const lemailValue = lemail.value.trim();
-  const lpasswordValue = lpassword.value.trim();
-
-  if (
-    lemailValue == "" ||
-    !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-      lemailValue
-    )
-  ) {
-    setError(
-      lemail,
-      "Email must contains something like this :  example@whatever.com"
-    );
-  } else {
-    setSuccess(lemail);
-  }
-
-  if (lpasswordValue == "" || !/^\d+$/.test(lpasswordValue)) {
-    setError(
-      lpassword,
-      "Password must be not be null and must contains one lowercase,one uppercase and one digit."
-    );
-  } else {
-    setSuccess(lpassword);
-  }
-
-  alert(sending.length);
-  if (sending.length === 0) {
-    var myFormAction = document.getElementById("createForm") || null;
-    if (myFormAction) {
-      alert("wraios re man");
-      e.preventDefault();
-  } else {
-    e.preventDefault();
-    sending = [];
-  }
+function onResetLogin() {
+  document.getElementById("login").reset();
+  errorElement.innerText = null;
 }
-};
+
+function onResetCreate() {
+  document.getElementById("create").reset();
+  errorElement.innerText = null;
+}
+
+function onPrint() {
+  window.print();
+}

@@ -1,10 +1,10 @@
 // // // todo: change the path to the corresponding urls.
 
-// var searchAction = document.getElementById("search") || null;
-// if (searchAction) {
-//   searchAction.action =
-//     "http://localhost/php_labs/Airlines-Project-For-Unipi-Pure-Html-Css/ticket/search.php";
-// }
+var searchAction = document.getElementById("search") || null;
+if (searchAction) {
+  searchAction.action =
+    "http://localhost/php_labs/Airlines-Project-For-Unipi-Pure-Html-Css/ticket/search.php";
+}
 
 const latinValidation = !/^[a-zA-Z]+$/;
 const form = document.getElementById("myForm");
@@ -67,7 +67,8 @@ const validateInputs = (e) => {
   const phoneValue = phone.value.trim();
   const cldValue = cld.value.trim();
   const cardValue = card.value.trim();
-  const cardxexpdateValue = cardxexpdate.value.trim()
+  const cardxexpdateValue = cardxexpdate.value.trim();
+  const birthdateValue = birthdate.value.trim();
 
   if ( firstnameValue == "" || !/^[a-zA-Z]+$/.test(firstnameValue) ) {
     setError(firstname, latinMsg);
@@ -75,7 +76,7 @@ const validateInputs = (e) => {
     setSuccess(firstname);
   }
 
-  if (firstnameValue == "" || !/^[a-zA-Z]+$/.test(lastnameValue) || lastnameValue == "") {
+  if (lastnameValue == "" || !/^[a-zA-Z]+$/.test(lastnameValue) ) {
     setError(lastname, latinMsg);
   } else {
     setSuccess(lastname);
@@ -136,6 +137,12 @@ const validateInputs = (e) => {
     setSuccess(cardxexpdate);
   }
 
+  if(birthdateValue ==""){
+    setError(birthdate,"Please put a valid date");
+  }else{
+    setSuccess(birthdate);
+  }
+
   if (sending.length === 0) {
     var myFormAction = document.getElementById("myForm") || null;
     if (myFormAction) {
@@ -147,27 +154,4 @@ const validateInputs = (e) => {
     sending = [];
   }
 
-  // if(lastname === '') {
-  //     setError(email, 'Email is required');
-  // } else if (!isValidEmail(emailValue)) {
-  //     setError(email, 'Provide a valid email address');
-  // } else {
-  //     setSuccess(email);
-  // }
-
-  // if(passwordValue === '') {
-  //     setError(password, 'Password is required');
-  // } else if (passwordValue.length < 8 ) {
-  //     setError(password, 'Password must be at least 8 character.')
-  // } else {
-  //     setSuccess(password);
-  // }
-
-  // if(password2Value === '') {
-  //     setError(password2, 'Please confirm your password');
-  // } else if (password2Value !== passwordValue) {
-  //     setError(password2, "Passwords doesn't match");
-  // } else {
-  //     setSuccess(password2);
-  // }
 };
