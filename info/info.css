@@ -73,3 +73,26 @@ h1:hover,p:hover{
   color: black;
 }
 
+@media (max-width: 768px){
+
+
+  header .logo  {
+    font-size: 0.8rem;
+  }
+  
+  header .navbar ul li a {
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    margin-left: 2rem;
+  }
+
+  header .navbar ul li ul li ul {
+    left: 3rem;
+  }
+  
+/* 
+  h1,h2{
+    font-size: 1rem;
+  } */
+
+}
